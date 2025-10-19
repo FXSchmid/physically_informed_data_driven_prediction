@@ -2,7 +2,7 @@
 
 This repository contains a domain-independent, physically-informed data-driven model for producing multi-step flood inundation forecasts. The model follows the approach presented in:
 
-> Felix Schmid, Leonie Müller, Jorge Leandro, *A physically informed domain-independent data-driven inundation forecast model*, Water Research, 2025.
+> Felix Schmid, Leonie Müller, Jorge Leandro, *A physically informed domain-independent data-driven inundation forecast model*, Water Research, 2025. https://doi.org/10.1016/j.watres.2025.124819
 ---
 
 ## Repository contents
@@ -12,6 +12,7 @@ This repository contains a domain-independent, physically-informed data-driven m
   - `train/` — config, training loop, loss function, metrics, checkpoint utilities
 - `README.md` — this file.
 - `LICENSE`
+-  the actuall pdf of the published work (the quality was downsampled, for a high quality pdf please refer to the Water Research page via: https://doi.org/10.1016/j.watres.2025.124819) 
 - `requirements.txt` — pinned Python dependencies.
 
 ---
