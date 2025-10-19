@@ -5,7 +5,7 @@ This repository contains a domain-independent, physically-informed data-driven m
 > Felix Schmid, Leonie Müller, Jorge Leandro, *A physically informed domain-independent data-driven inundation forecast model*, Water Research, 2025. https://doi.org/10.1016/j.watres.2025.124819
 ---
 
-Note: We are actively working on improvements and addressing the limitations discussed in the publication.
+Note: **This Repo is currenty in the setting up face, so more details will follow soon**. Further we are actively working on improvements and addressing the limitations discussed in the publication.
 Future updates will include extended experiments, enhanced physical constraints, and broader benchmarking.
 Stay tuned for upcoming releases.
 
