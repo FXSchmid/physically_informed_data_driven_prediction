@@ -1,0 +1,7 @@
+# Data files
+*.txt
+*.h5
+*.hdf5
+*.npy
+*.asc
+
