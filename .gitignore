@@ -4,4 +4,11 @@
 *.hdf5
 *.npy
 *.asc
+*.png
+*.xml
+*.ovr
+*.pyc
+*.json
+*.db
+
 

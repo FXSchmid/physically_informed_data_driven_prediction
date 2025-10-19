@@ -96,19 +96,12 @@ class Config:
             f.write("Training Settings\n")
             for key, value in settings.items():
                 f.write(f"{key}: {value}\n")
- 
-    def get_shapes(self, GIS):
-        elevation = GIS[:,:,:,0]
-        elevation = np.reshape(elevation,(4,256,256,1))
-        elevation_center = elevation[:,64:192,64:192,:]
-        return elevation_center
     
     def round_tensor(self, tensor, decimals):
         factor = tf.constant(10.0 ** decimals, dtype=tensor.dtype)
         return tf.round(tensor * factor) / factor
     
     def c_s_get_shapes(self, x_water, x_rain, y_true, GIS): 
-
         elevation = GIS[:,:,:,1]
         elevation = np.reshape(elevation,(self.batch_size,256,256,1))
         elevation_center = elevation[:,64:192,64:192,:] # center part
@@ -119,7 +112,7 @@ class Config:
         n_center = n[:,64:192,64:192,:]
         n_center_nn = n_center * 0.1
 
-        y_previous = x_water[:,1,:,:,:]# bei 10 min 1 sonst 2 bei 15 min
+        y_previous = x_water[:,1,:,:,:]
         y_center = y_previous[:,64:192,64:192,:] #center part
         y_true_sliced = y_true[:, :, :, :-1]
         y_true_previous = np.concatenate([y_center, y_true_sliced], axis = -1)
