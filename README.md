@@ -12,7 +12,8 @@ Stay tuned for upcoming releases.
 ## Repository contents
 
 - `src/`
-  - `arcitectures/` — ai model architectures
+  - `arcitectures/` — ai model architectures and blocks for the initial and sequence network
+  - `cellular_automata_model/` - holds the CA model for the initial attention
   - `train/` — config, training loop, loss function, metrics, checkpoint utilities
 - `README.md` — this file.
 - `LICENSE`
