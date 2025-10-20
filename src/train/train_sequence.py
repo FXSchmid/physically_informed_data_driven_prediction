@@ -1,6 +1,6 @@
 import tensorflow as tf
 import os
-from architecture.initial_network import InitialNetwork
+from architecture.sequence_network import Sequence_Network
 import logging
 import config
 import numpy as np
@@ -20,7 +20,7 @@ class Training_sequ:
 
         # allow passing channels or keep previous default
         self.channels = channels if channels is not None else [32, 64, 128, 256, 512]
-        self.model = InitialNetwork(self.channels)
+        self.model = Sequence_Network(self.channels)
         self.config_C = config.Config(self.model)
         self.batch_size = self.config_C.batch_size
         self.epochs = self.config_C.epochs
