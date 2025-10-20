@@ -32,39 +32,6 @@ class Config:
         self.log_training = []
         self.log_validation = []
 
-    def export_settings_after_epoche(self,epoch):
-        train_acc_results_np = np.array(self.log_training)
-        val_acc_results_np = np.array(self.log_validation)
-        np.save(self.cp_path_epochen + f'/train_results_epoche_{epoch}.npy', train_acc_results_np)
-        np.save(self.cp_path_epochen + f'/val_results_{epoch}.npy', val_acc_results_np)
-
-        filename = self.cp_path_epochen + '/' + f'training_settings_epoche_{epoch}.txt'
-        total_trainable_weights = sum([tf.size(w).numpy() for w in self.model.trainable_weights])
-        total_trainable_weights = format(total_trainable_weights, ',')
-        settings = {
-            "model name": self.model.__class__.__name__,
-            "start training time": self.start_time,
-            "end training time": datetime.datetime.now().strftime('%Y.%m.%d - %H:%M:%S'),
-            "batchsize": self.batch_size,
-            "epochs": self.epochs,
-            "epoch_now": epoch+1,
-            "RMSE Train loss of epoch": train_acc_results_np[-1],
-            "RMSE Val loss of epoch": val_acc_results_np[-1],
-            "steps": self.steps,
-            "optimizer": self.optimizer.__class__.__name__,
-            "learning rate": self.learning_rate,
-            "loss function": self.loss_fn.name,
-            "number trainable weights": total_trainable_weights,
-            "best train epoch": self.log_training.index(min(self.log_training)),
-            "minimum train error": min(self.log_training),
-            "best vali epoch": self.log_validation.index(min(self.log_validation)),
-            "minimum validation error": min(self.log_validation)
-        }
-        with open(filename, 'w') as f:
-            f.write("Training Settings after epoch\n")
-            for key, value in settings.items():
-                f.write(f"{key}: {value}\n")
-
     def export_settings(self):
         train_acc_results_np = np.array(self.log_training)
         val_acc_results_np = np.array(self.log_validation)
