@@ -6,7 +6,7 @@ This repository contains a domain-independent, physically-informed data-driven m
 ---
 
 Note: **This Repo is currenty in the setting up face, so more details will follow soon**. Further we are actively working on improvements and addressing the limitations discussed in the publication.
-Future updates will include extended experiments, enhanced physical constraints, and broader benchmarking.
+Future updates will include experiments, enhanced physical constraints, and benchmarking.
 Stay tuned for upcoming releases.
 
 ## Repository contents
@@ -14,15 +14,16 @@ Stay tuned for upcoming releases.
 - `src/`
   - `arcitectures/` — ai model architectures and blocks for the initial and sequence network
   - `cellular_automata_model/` - holds the CA model for the initial attention
-  - `train/` — config, training loop, loss function, metrics, checkpoint utilities
+  - `train/` — config, training loop, loss function, metrics, checkpoint utilities this folder and scripts are for training. A guide in there will explain the training approch
+  - `test/`  — scripts for testing the forecasting system. A guide in there will explain the approch
 - `README.md` — this file.
 - `LICENSE`
 -  the actuall pdf of the published work (the quality was downsampled, for a high quality pdf please refer to the Water Research page via: https://doi.org/10.1016/j.watres.2025.124819) 
 - `requirements.txt` — pinned Python dependencies.
-
+  
 ---
 
 ## Installation
-we used a windows operating system at the time of the research
+we used a conda envirmonet on a windows 10 operating system at the time of the research. 
 
 pip install -r requirements.txt
