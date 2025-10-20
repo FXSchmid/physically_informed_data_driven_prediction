@@ -73,13 +73,12 @@ class SequenenceNetwork(Model):
         x = self.outputs_1(x,training=training)
         y = self.outputs_2(x, training=training)
 
-
-        return y
+        return y #output is the sequence of the timesteps in the different channels e.g 128,128,10
 
     def build_graph(self):
         gis = keras.Input(shape=(256, 256, 8))
-        water = keras.Input(shape=(2 ,256, 256, 1))
-        rain = keras.Input(shape=(16, 16, 22)) 
+        water = keras.Input(shape=(2 ,256, 256, 1)) # timestep 0 and timestep 10 from the initial network
+        rain = keras.Input(shape=(16, 16, 20)) # min resolution could e changed 
         forecast_model = keras.Model(inputs=[gis,water,rain], outputs=self.call(gis,water,rain))
         return forecast_model
     def get_config(self):

@@ -71,12 +71,12 @@ class InitialNetwork(Model):
 
         x = self.outputs_1(x,training=training)
         y = self.outputs_2(x, training=training)
-        return y
+        return y #output is the first timestep 10min
 
     def build_graph(self):
-        gis = keras.Input(shape=(256, 256, 13))
-        water = keras.Input(shape=(2,256, 256, 1))
-        rain = keras.Input(shape=(16, 16, 2))
+        gis = keras.Input(shape=(256, 256, 8))
+        water = keras.Input(shape=(2,256, 256, 1)) # time 0 and 5 from the CAM attention
+        rain = keras.Input(shape=(16, 16, 2)) # timestep 5 and 10 
         forecast_model = keras.Model(inputs=[gis,water,rain], outputs=self.call(gis,water,rain))
         return forecast_model
     def get_config(self):
