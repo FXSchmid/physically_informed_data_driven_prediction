@@ -14,8 +14,8 @@ Stay tuned for upcoming releases.
 - `src/`
   - `arcitectures/` — ai model architectures and blocks for the initial and sequence network
   - `cellular_automata_model/` - holds the CA model for the initial attention
-  - `train/` — config, training loop, loss function, metrics, checkpoint utilities this folder and scripts are for training. A guide in there will explain the training approch
-  - `test/`  — scripts for testing the forecasting system. A guide in there will explain the approch
+  - `train/` — config, loss function, metrics, checkpoint utilities.
+  - `test/`  — scripts for testing the forecasting system.
 - `README.md` — this file.
 - `LICENSE`
 -  the actuall pdf of the published work (the quality was downsampled, for a high quality pdf please refer to the Water Research page via: https://doi.org/10.1016/j.watres.2025.124819) 
